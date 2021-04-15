@@ -80,7 +80,7 @@ namespace HelloWorld
 		// Revenue -- don't forget to add the m distinguish between a double and decimal 
 		decimal revenue = 390819.28m; 
 		// Log the values to the console:
-		Console.WriteLine("pizzaShops = " + pizzaShops + " totalEmployees = " + " revenue = " + revenue);
+		Console.WriteLine("pizzaShops = " + pizzaShops + " totalEmployees = " + totalEmployees + " revenue = " + revenue);
 
 		int answer = 4 + 19;
 		Console.WriteLine(answer); 
@@ -139,14 +139,97 @@ namespace HelloWorld
 		double numberTwoSqrt = Math.Floor(Math.Sqrt(Math.Abs(numberTwo)));
 		Console.WriteLine(Math.Min(numberOneSqrt,numberTwoSqrt)); // prints NaN - stands for not a number so use Math.Abs 
 		
-      double numberOne = 6.5;
-      double numberTwo = 4;
-      // Console.WriteLine(numberOne^numberTwo); // error 
-      Console.WriteLine(Math.Pow(numberOne,numberTwo));
-      // Round numberOne up
-      Console.WriteLine(Math.Ceiling(numberOne));
-      // Find the larger number between numberOne and numberTwo
-      Console.WriteLine(Math.Max(numberOne, numberTwo));
+		double numberThree = 6.5;
+		double numberFour = 4;
+		// Console.WriteLine(numberThree^numberFour); // error 
+		Console.WriteLine(Math.Pow(numberThree,numberFour));
+		// Round numberThree up
+		Console.WriteLine(Math.Ceiling(numberThree));
+		// Find the larger number between numberThree and numberFour
+		Console.WriteLine(Math.Max(numberThree, numberFour));
+		
+		/* What happens when you need to include quotes in a string? 
+		 * You can use an escape sequence. An escape sequence places a backslash (\) 
+		 * before the inner quotation marks, so the program doesn’t read them 
+		 * accidentally as the end of sequence. 
+		*/
+		// string withoutSlash = "Ifemelu said, "Hello!""; // error 
+		string withSlash = "Ifemelu said, \"Hello!\"";
+		string newLine = "Ifemelu walked \n to the park."; // \n for new line 
+		
+		/* String concatenation */
+		string yourFaveMusician = "David Bowie";
+		string myFaveMusician = "Solange";
+		Console.WriteLine("Your favorite musician is " + yourFaveMusician + " and mine is " + myFaveMusician + ".");
+		/* String interpolation 
+		 * Make sure there isn’t a space in between the $ and the starting quotation mark ".
+		*/
+		Console.WriteLine($"Your favorite musician is {yourFaveMusician} and mine is {myFaveMusician}.");
+		string beginning = "Once upon a time,";
+		string middle = "The kid climbed a tree";
+		string end = "Everyone lived happily ever after.";
+		Console.WriteLine($"{beginning}{middle}{end}");
+		string story = $"{beginning}{middle}{end}";
+		Console.WriteLine(story);
+		
+		string userTweet = Console.ReadLine();
+		Console.WriteLine(middle.Length);  
+		Console.WriteLine(userTweet.Length);  // return length 
+		string word = "radio";
+		Console.WriteLine(word.IndexOf("a")); // return position 
+		
+		string password = "a92301j2add"; 
+		int passwordLength = password.Length;  
+		int passwordCheck = password.IndexOf("!"); // Check if password uses symbol 
+		Console.WriteLine($"The user password is {password}. Its length is {passwordLength} and it receives a {passwordCheck} check.");
+				
+		string plantName = "Cactaceae, Cactus"; 
+		int charPosition = plantName.IndexOf("Cactus"); // returns 11
+		string commonName = plantName.Substring(charPosition); // returns Cactus
+		Console.WriteLine(charPosition + commonName); 
+		
+		string plantName2 = "Cactaceae, Cactus";
+		int charPosition2 = plantName2.IndexOf("u"); // returns 15
+		char u = plantName2[charPosition2]; // returns u
+		Console.WriteLine(charPosition2 + " " +u); 
+
+		string studentsName = "Farhad Hesam Abbasi";
+		string firstCharacter = studentsName.Substring(0,1); 
+		charPosition = studentsName.IndexOf(firstCharacter);
+		char firstLetter = studentsName[charPosition];
+		Console.WriteLine(firstCharacter + " " + charPosition + " " + firstLetter + " ");
+		// Get last name
+		string lastName = studentsName.Substring(studentsName.IndexOf("Abbasi")); 
+		Console.WriteLine(lastName);
+
+		string shouting = "I'm not shouting, you're shouting".ToUpper();
+		Console.WriteLine(shouting);
+
+		bool boolAnswer = 3 < 75; 
+		Console.WriteLine(boolAnswer);
+		boolAnswer = (true == false);
+		Console.WriteLine(boolAnswer); 
+		
+		/* You are driving to your family’s house for a holiday and want to see if you’ll get there before dinner. 
+		 * Dinner will begin at 6:00 PM and the house is 95 miles away. If you leave at 2:00PM and drive an average 
+		 * of 30 miles per hour, will you get there early (before 6:00pm)? 
+		*/
+		double timeToDinner = 4; 
+		double distance = 95; 
+		double rate = 30; 
+		double tripDuration = distance/rate;
+		bool arriveOnTime = tripDuration<=timeToDinner;
+		Console.WriteLine(arriveOnTime);
+		
+		bool logicalOr = (9 < 3) || (100 < 45); // evaluates to False
+		bool logicalAnd = ((3439 > 40) && (1 < 3)) || answer;
+		bool beach = true;
+		bool hiking = false;
+		bool city = true;
+		bool yourNeeds = (beach&&city);
+		bool friendNeeds = (beach||hiking); 
+		bool tripDecision = (yourNeeds&&friendNeeds);
+		Console.WriteLine(tripDecision);
 	}
   }
 }
