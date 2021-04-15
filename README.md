@@ -11,3 +11,5 @@ There are several built-in methods that we can use to manipulate numerical data 
 
 .Substring() grabs part of a string using the specified character position and continues until the end of the string and returns a new string. 
 .IndexOf() is usually used first to get the specific character position.
+
+methods - A method is a reusable set of instructions that perform a specific task.
