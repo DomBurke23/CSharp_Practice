@@ -222,7 +222,7 @@ namespace HelloWorld
 		Console.WriteLine(arriveOnTime);
 		
 		bool logicalOr = (9 < 3) || (100 < 45); // evaluates to False
-		bool logicalAnd = ((3439 > 40) && (1 < 3)) || answer;
+		bool logicalAnd = (((3439 > 40) && (1 < 3)) || logicalOr);
 		bool beach = true;
 		bool hiking = false;
 		bool city = true;
@@ -230,6 +230,94 @@ namespace HelloWorld
 		bool friendNeeds = (beach||hiking); 
 		bool tripDecision = (yourNeeds&&friendNeeds);
 		Console.WriteLine(tripDecision);
+		
+		/* if statement */
+		string color = "blue";
+		if (color == "blue"){
+			// this code block will execute only if the value of color is 
+			// equivalent to "blue"
+			Console.WriteLine("color is blue");
+		}
+		
+		/* else statement */
+		color = "red";
+		if (color == "blue"){
+			// this code block will execute only if the value of color is 
+			// equivalent to "blue"
+			Console.WriteLine("color is blue");
+		} 
+		else {
+			// this code block will execute if the value of color is 
+			// NOT equivalent to "blue"
+			Console.WriteLine("color is NOT blue");
+		}
+		
+		/* elseif statement */
+		if (color == "blue"){
+			// this code block will execute only if the value of color is 
+			// equivalent to "blue"
+			Console.WriteLine("color is blue");
+		} 
+		else if (color == "red"){
+			// this code block will execute if the value of color is 
+			// equivalent to "red"
+			Console.WriteLine("color is NOT blue");
+		} 
+		else { // this is optional 
+			// this code block will execute if the value of color is 
+			// NOT equivalent to "blue" OR "red"
+			Console.WriteLine("color is NOT blue OR red");
+		}
+		
+		/* switch statement */
+		switch (color)
+		{
+		   case "blue":
+			  // execute if the value of color is "blue"
+			  Console.WriteLine("color is blue");
+			  break;
+		   case "red":
+			  // execute if the value of color is "red"
+			  Console.WriteLine("color is red");
+			  break;
+		   case "green":
+			  // execute if the value of color is "green"
+			  Console.WriteLine("color is green");
+			  break;
+		   default:
+			  // execute if none of the above conditions are met
+			  break;
+		}
+		
+		
+      Console.WriteLine("Choose a movie genre: ");
+      string genre = Console.ReadLine();
+      switch (genre)
+      {
+        case "Drama":
+          Console.WriteLine("Citizen Kane");
+        break;
+
+        case "Comedy":
+          Console.WriteLine("Duck Soup");
+        break;
+
+        case "Adventure":
+          Console.WriteLine("King Kong");
+        break;
+
+        case "Horror":
+          Console.WriteLine("Psycho");
+        break;
+
+        case "Science Fiction":
+          Console.WriteLine("2001: A Space Odyssey");
+        break;
+
+        default:
+          Console.WriteLine("No movie found");
+        break;
+      }
 	}
   }
 }
