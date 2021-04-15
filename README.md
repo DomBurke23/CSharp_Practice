@@ -8,3 +8,6 @@ There are several built-in methods that we can use to manipulate numerical data 
 - Math.Sqrt()—will find the square root of a number. Example: Math.Sqrt(16) returns 4.
 - Math.Floor()—will round the given double or decimal down to the nearest whole number. Example: Math.Floor(8.65) returns 8.
 - Math.Min()—returns the smaller of two numbers. Example: Math.Min(39, 12) returns 12.
+
+.Substring() grabs part of a string using the specified character position and continues until the end of the string and returns a new string. 
+.IndexOf() is usually used first to get the specific character position.
