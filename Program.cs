@@ -17,6 +17,19 @@ namespace HelloWorld
 {
   class Program
   {
+	static void VisitPlanets(){
+		Console.WriteLine("Entered VisitPlanets");
+	}
+	static void VisitPlanetsParam(int numberOfPlanets){
+		Console.WriteLine($"Entered VisitPlanetsParam - You visited {numberOfPlanets}");
+	}
+	static void VisitPlanetsOptionalParam(int numberOfPlanets=0){ // default value of parameter is 0 if not passed one 
+		Console.WriteLine($"Entered VisitPlanetsOptionalParam - You visited {numberOfPlanets}");
+	}
+	static void VisitPlanetsNamedArgument(int a=0, string b ="0", int c =0 ){ 
+		Console.WriteLine($"Entered VisitPlanetsNamedArgument - You visited: {a},{b},{c}");
+	}
+	
     static void Main()
     {
 		//Console.WriteLine("This is the syntax to print text");
@@ -290,34 +303,55 @@ namespace HelloWorld
 		}
 		
 		
-      Console.WriteLine("Choose a movie genre: ");
-      string genre = Console.ReadLine();
-      switch (genre)
-      {
-        case "Drama":
-          Console.WriteLine("Citizen Kane");
-        break;
-
-        case "Comedy":
-          Console.WriteLine("Duck Soup");
-        break;
-
-        case "Adventure":
-          Console.WriteLine("King Kong");
-        break;
-
-        case "Horror":
-          Console.WriteLine("Psycho");
-        break;
-
-        case "Science Fiction":
-          Console.WriteLine("2001: A Space Odyssey");
-        break;
-
-        default:
-          Console.WriteLine("No movie found");
-        break;
-      }
+		Console.WriteLine("Choose a movie genre: ");
+		string genre = Console.ReadLine();
+		switch (genre)
+		{
+			case "Drama":
+				Console.WriteLine("Citizen Kane");
+				break;
+			case "Comedy":
+				Console.WriteLine("Duck Soup");
+				break;
+			case "Adventure":
+				Console.WriteLine("King Kong");
+				break;
+			case "Horror":
+				Console.WriteLine("Psycho");
+				break;
+			case "Science Fiction":
+				Console.WriteLine("2001: A Space Odyssey");
+				break;
+			default:
+				Console.WriteLine("No movie found");
+				break;
+		}
+		
+		/* Ternary expression */
+		color = "blue";
+		string ternaryResult = (color == "blue") ? "blue" : "NOT blue";
+		Console.WriteLine(ternaryResult);
+		int pepperLength = 4;
+		string message = (pepperLength >= 3.5) ? "ready!" : "wait a little longer" ;
+		Console.WriteLine(message);
+		
+		/* returns smallest number */
+		Console.WriteLine(Math.Min(3, 4));
+		
+		string designer = "Anders Hejlsberg";
+		int indexOfSpace = designer.IndexOf(" "); 
+		string secondName = designer.Substring(indexOfSpace);
+		Console.WriteLine(secondName);
+		
+		/* Calling a user defined method */
+		VisitPlanets(); // no arguments 
+		VisitPlanetsParam(3); // must pass one integer 
+		VisitPlanetsOptionalParam(); 
+		VisitPlanetsOptionalParam(5); 
+		VisitPlanetsNamedArgument(); // prints all default values 
+		VisitPlanetsNamedArgument(4); // changes the first default value 
+		VisitPlanetsNamedArgument(c:4); // changes argument c value 
+		VisitPlanetsNamedArgument(b:"Dom",c:6);
 	}
   }
 }
