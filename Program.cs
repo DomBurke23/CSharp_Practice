@@ -29,6 +29,15 @@ namespace HelloWorld
 	static void VisitPlanetsNamedArgument(int a=0, string b ="0", int c =0 ){ 
 		Console.WriteLine($"Entered VisitPlanetsNamedArgument - You visited: {a},{b},{c}");
 	}
+	static void NamePets(string a, string b){
+		Console.WriteLine($"Your pets {a} and {b} will be joining your voyage across space!");
+	}
+	static void NamePets(string a, string b, string c){
+		Console.WriteLine($"Your pets {a} , {b} and {c} will be joining your voyage across space!");
+	}
+	static void NamePets( ){
+		Console.WriteLine("Aw, you have no spacefaring pets :(");
+	}
 	
     static void Main()
     {
@@ -352,6 +361,13 @@ namespace HelloWorld
 		VisitPlanetsNamedArgument(4); // changes the first default value 
 		VisitPlanetsNamedArgument(c:4); // changes argument c value 
 		VisitPlanetsNamedArgument(b:"Dom",c:6);
+		
+		/* Method Overloading */ 
+		Console.WriteLine(Math.Round(3.14159, 2)); // returns 3.14
+		Console.WriteLine(Math.Round(3.14159)); // returns 3
+		NamePets("Laika", "Albert");
+		NamePets("Mango", "Puddy","Bucket");
+		NamePets();
 	}
   }
 }
