@@ -13,3 +13,5 @@ There are several built-in methods that we can use to manipulate numerical data 
 .IndexOf() is usually used first to get the specific character position.
 
 methods - A method is a reusable set of instructions that perform a specific task.
+
+method overloading -  is useful if you want the same method to have different behavior based on its inputs.
