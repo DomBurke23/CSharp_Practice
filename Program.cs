@@ -11,6 +11,8 @@ using System;
  *
  *  The difference between Write() and WriteLine() method is based on new line character.
  *  WriteLine() automatically adds the \n line break. 
+ * 
+ * methods use void as their return type if they are not expecting to return a value. 
  */
 
 namespace HelloWorld
@@ -184,8 +186,7 @@ namespace HelloWorld
 		string myFaveMusician = "Solange";
 		Console.WriteLine("Your favorite musician is " + yourFaveMusician + " and mine is " + myFaveMusician + ".");
 		/* String interpolation 
-		 * Make sure there isn’t a space in between the $ and the starting quotation mark ".
-		*/
+		 * Make sure there isn’t a space in between the $ and the starting quotation mark ". */
 		Console.WriteLine($"Your favorite musician is {yourFaveMusician} and mine is {myFaveMusician}.");
 		string beginning = "Once upon a time,";
 		string middle = "The kid climbed a tree";
@@ -368,6 +369,25 @@ namespace HelloWorld
 		NamePets("Laika", "Albert");
 		NamePets("Mango", "Puddy","Bucket");
 		NamePets();
+		
+		/* Int32.TryParse */
+		string textNumber = "abc"; 
+		int number2, number3;
+		Console.WriteLine(Int32.TryParse(textNumber, out number2)); 
+		var boolParse = Int32.TryParse(textNumber,out number2); 
+		if (boolParse==true){ Console.WriteLine(number2); } else { number2 =0; Console.WriteLine(number2); }
+		bool success = Int32.TryParse("10602", out number2); 
+		Console.WriteLine("success = " + success); // number2 is 10602 and success is true
+		bool success2 = Int32.TryParse(" !!! ", out number3);
+		Console.WriteLine("success2 = " + success2);
+		string ageAsString = "102";
+		string nameAsString = "Granny";
+		int ageAsInt, nameAsInt; 
+		bool outcome, outcome2; 
+		outcome = Int32.TryParse(ageAsString, out ageAsInt); 
+		Console.WriteLine($"Outcome = {outcome} and ageAsInt = {ageAsInt}");
+		outcome2 = Int32.TryParse(nameAsString, out nameAsInt); 
+		Console.WriteLine($"Outcome2 = {outcome} and nameAsInt = {nameAsInt}");
 	}
   }
 }
