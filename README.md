@@ -15,3 +15,6 @@ There are several built-in methods that we can use to manipulate numerical data 
 methods - A method is a reusable set of instructions that perform a specific task.
 
 method overloading -  is useful if you want the same method to have different behavior based on its inputs.
+
+expression-bodied definitions and lambda expressions. “These are shortcuts for defining methods!” 
+expression-bodied definitions can only be used when a method contains one expression. 
