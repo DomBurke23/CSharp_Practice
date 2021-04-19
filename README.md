@@ -18,3 +18,4 @@ method overloading -  is useful if you want the same method to have different be
 
 expression-bodied definitions and lambda expressions. “These are shortcuts for defining methods!” 
 expression-bodied definitions can only be used when a method contains one expression. 
+lambda expressions, are great for situations when you need to pass a method as an argument.
