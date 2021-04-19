@@ -40,6 +40,35 @@ namespace HelloWorld
 	static void NamePets( ){
 		Console.WriteLine("Aw, you have no spacefaring pets :(");
 	}
+	static string Yell(string phrase, out bool wasYellCalled)
+	{
+	  wasYellCalled = true;
+	  return phrase.ToUpper();
+	}
+	static string Whisper(string phrase, out bool wasWhisperCalled)
+    {
+      wasWhisperCalled  = true; 
+      return phrase.ToLower();
+    }
+	/* Expression-bodied Definitions 
+	bool IsEven(int num) {
+		return num % 2 == 0; 
+	} 
+	--- can be shortened to this : */
+	static bool IsEven(int num) => num % 2 == 0; 
+	void Shout(string x) => Console.WriteLine(x.ToUpper()); // works if returning nothing (void) too
+	static double DaysToRotations(double days)=> days / 365; 
+    static void Welcome(string planet)=>Console.WriteLine($"Welcome to {planet}!");
+	public static bool IsLong(string word)
+    {
+      return word.Length > 8;
+    }    
+	static bool HitGround(string s)
+    {
+      return s == "meteorite";
+    } 
+	static bool isBig(int n) => n > 100;
+    static bool isSmall(int n) => n < 10;
 	
     static void Main()
     {
@@ -388,7 +417,95 @@ namespace HelloWorld
 		Console.WriteLine($"Outcome = {outcome} and ageAsInt = {ageAsInt}");
 		outcome2 = Int32.TryParse(nameAsString, out nameAsInt); 
 		Console.WriteLine($"Outcome2 = {outcome} and nameAsInt = {nameAsInt}");
-	}
+		
+		message = "garrrr";
+		Console.WriteLine(Yell(message, out bool flag));
+		string statement = "GARRRR";
+		bool marker;
+		string murmur = Whisper(statement, out marker);
+		Console.WriteLine(murmur);
+		
+		/* Expression-bodied Definitions */
+		Welcome("Earth");
+		double days = 500;
+		double rotations = DaysToRotations(days);
+		Console.WriteLine($"In {days} days, the Earth has rotated {rotations} time(s).");
+		
+		/* Methods as Arguments */
+		int[] numbers = {1, 3, 5, 6, 7, 8};
+		bool hasEvenNumber = Array.Exists(numbers, IsEven); // IsEven is called for every element in the array. 
+		Console.WriteLine(hasEvenNumber); // prints true if one of the elements in the array is even. 
+		string[] adjectives = {"rocky", "mountainous", "cosmic", "extraterrestrial"};
+		string firstLongAdjective = Array.Find(adjectives, IsLong);
+		Console.WriteLine($"The first long word is: {firstLongAdjective}.");
+		
+		/* Lambda Expression */
+		//hasEvenNumber = Array.Exists(numbers, (int num) => num % 2 == 0 );  // anonymous method: it has no name.
+		// we can remove int with deductive reasoning. When there is one parameter we can remove the parentheses(). 
+		hasEvenNumber = Array.Exists(numbers, num => num % 2 == 0 ); 
+		Console.WriteLine(hasEvenNumber);
+		bool hasBigDozen = Array.Exists(numbers, (int num) => {
+		bool isDozenMultiple = num % 12 == 0;
+		bool greaterThan20 = num > 20;
+		return isDozenMultiple && greaterThan20;}); 
+		Console.WriteLine(hasBigDozen);
+		
+		string[] spaceRocks = {"meteoroid", "meteor", "meteorite"};
+		//bool makesContact = Array.Exists(spaceRocks, HitGround);
+		/* rewrite the line above as a lambda expression */ 
+		bool makesContact = Array.Exists(spaceRocks,(string s) => s == "meteorite" );
+		if (makesContact)	{
+			Console.WriteLine("At least one space rock has reached the Earth's surface!");
+		} 
+		int[] nums = {0, 555, 252, 3, 9, 101};
+		bool hasBigNum = Array.Exists(nums, isBig);
+		bool hasSmallNum = Array.Exists(nums, isSmall);
+		bool hasMediumNum = Array.Exists(nums, (n) => n >= 10 && n <= 100);
+		Console.WriteLine($"Any big #s? {hasBigNum}");
+		Console.WriteLine($"Any small #s? {hasSmallNum}");
+		Console.WriteLine($"Any medium #s? {hasMediumNum}");
+		
+		/* Arrays */
+		int[] x; 
+		double[] d; 
+		int[] plantHeights = { 3, 6, 4, 1, 6, 8 };
+		//You may also see arrays defined and initialized using a new keyword
+		int[] plantHeights1 = new int[] { 3, 4, 6 };
+		// if you decide to define an array and then initialize it later (rather in one line like above) you must use the new keyword
+		x = new int[] { 3, 4, 6 }; 
+		string[] summerStrut;
+		summerStrut = new string[]{"Juice","Missing U","Raspberry Beret","New York Groove","Make Me Feel","Rebel Rebel", "Despacito","Los Angeles" };
+		int[] ratings = {5, 4, 4, 3, 3, 5, 5, 4 };
+		int arrayLength = plantHeights.Length; 
+		Console.WriteLine(arrayLength);
+		if (summerStrut.Length== 8){ 
+			Console.WriteLine("Ready to play!");
+		} else if (summerStrut.Length>8) {
+			Console.WriteLine("Too many songs!");
+		} else {
+			Console.WriteLine("Not enough songs!");
+		}
+		int plantTwoHeight = plantHeights[1]; // accessing an element in the array 
+		Console.WriteLine(plantTwoHeight);
+		Console.WriteLine($"You rated the song {summerStrut[1]} {ratings[1]} stars");
+		int houseHeights = new int[3]; // will have 3 elements all 0 
+		houseHeights[2] = 8; // [0,0,8] 
+		// plantHeights will be [3, 5, 6]
+		plantHeights[1] = 5; 
+		summerStrut[7]="I Like It";
+		ratings[7]=1;
+		Console.WriteLine(ratings[7]); 
+		Array.Sort(plantHeights); 
+		Array.IndexOf(plantHeights, 6);  // returns 1
+		// Find the first occurence of a plant height that is greater than 5 inches, 
+		int firstHeight = Array.Find(plantHeights, height => height > 5);
+		int ratingThree = Array.IndexOf(ratings, 3);
+		Console.WriteLine($"Song number {summerStrut[ratingThree+1]} is rated three stars");
+		string longName = Array.Find(summerStrut, name => name.Length > 10);
+		Console.WriteLine($"he first song that has more than 10 characters in the title is {longName}");
+		Array.Sort(summerStrut);
+		Console.WriteLine(summerStrut[0] + summerStrut[7]);
+	} 
   }
 }
  
