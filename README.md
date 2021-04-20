@@ -27,3 +27,11 @@ Array.Find() - searches a one-dimensional array for a specific value or set of v
 Array.Copy() copies a range of elements from one array to a second array. It takes three parameters: the name of the array to be copied, the new array, and the length of the array elements.
 Array.Reverse() will switch the order of elements in an entire array. It can also reverse them in a portion of an array.
 Array.Clear() sets a range of elements in an array to the default value. It takes three parameters: the name of the array, the starting index of the range to clear, and the number of elements to clear. To clear an entire array, set the index to 0 (if it is zero-indexed) and then pass in the length of the array for the third parameter.
+
+while loops are good when you know your stopping condition, but not when you know how many times you want a program to loop or if you have a specific collection to loop through.
+do...while loops are only necessary if you definitely want something to run once, but then stop if a condition is met.
+for loops are best if you want something to run a specific number of times, rather than given a certain condition.
+foreach loops are the best way to loop over an array, or any other collection.
+At any point within a loop block, you can end it by using the break keyword.
+The continue keyword is used to bypass portions of code. It will ignore whatever comes after it in the loop and then will go back to the top and start the loop again.
+The return keyword is another way to exit a loop, specifically loops that are used within a method. When a return is used within such a loop, it breaks out of the loop and returns control to the point in the program where the method was called.
