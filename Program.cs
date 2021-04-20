@@ -69,6 +69,17 @@ namespace HelloWorld
     } 
 	static bool isBig(int n) => n > 100;
     static bool isSmall(int n) => n < 10;
+	static void CreateTemplate(int week)
+    {
+      Console.WriteLine($"Week {week}");
+      Console.WriteLine("Announcements: \n \n \n ");
+      Console.WriteLine("Report Backs: \n \n \n");
+      Console.WriteLine("Discussion Items: \n \n \n");
+    }
+	static void CreateTodoItem(string item)
+    {
+      Console.WriteLine($"[] {item}");
+    }
 	
     static void Main()
     {
@@ -477,7 +488,7 @@ namespace HelloWorld
 		summerStrut = new string[]{"Juice","Missing U","Raspberry Beret","New York Groove","Make Me Feel","Rebel Rebel", "Despacito","Los Angeles" };
 		int[] ratings = {5, 4, 4, 3, 3, 5, 5, 4 };
 		int arrayLength = plantHeights.Length; 
-		Console.WriteLine(arrayLength);
+		Console.WriteLine($"Array Length {arrayLength}");
 		if (summerStrut.Length== 8){ 
 			Console.WriteLine("Ready to play!");
 		} else if (summerStrut.Length>8) {
@@ -486,16 +497,18 @@ namespace HelloWorld
 			Console.WriteLine("Not enough songs!");
 		}
 		int plantTwoHeight = plantHeights[1]; // accessing an element in the array 
-		Console.WriteLine(plantTwoHeight);
+		Console.WriteLine($"Index 1 = {plantTwoHeight}" );
 		Console.WriteLine($"You rated the song {summerStrut[1]} {ratings[1]} stars");
-		int houseHeights = new int[3]; // will have 3 elements all 0 
+		int[] houseHeights = new int[3]; // will have 3 elements all 0 
 		houseHeights[2] = 8; // [0,0,8] 
 		// plantHeights will be [3, 5, 6]
 		plantHeights[1] = 5; 
 		summerStrut[7]="I Like It";
 		ratings[7]=1;
-		Console.WriteLine(ratings[7]); 
+		Console.WriteLine($"ratings[7] = {ratings[7]}"); 
+		foreach (int i in plantHeights) Console.Write(i + " ");
 		Array.Sort(plantHeights); 
+		foreach (int i in plantHeights) Console.Write(i + "\n ");
 		Array.IndexOf(plantHeights, 6);  // returns 1
 		// Find the first occurence of a plant height that is greater than 5 inches, 
 		int firstHeight = Array.Find(plantHeights, height => height > 5);
@@ -505,6 +518,43 @@ namespace HelloWorld
 		Console.WriteLine($"he first song that has more than 10 characters in the title is {longName}");
 		Array.Sort(summerStrut);
 		Console.WriteLine(summerStrut[0] + summerStrut[7]);
+		foreach (string str in summerStrut) Console.Write(str + " "); // print string array 
+		foreach (int i in ratings) Console.Write(i + " "); // print int array 
+		
+		string[] summerStrutCopy = new string[8]; // create a copy of the array 
+		Array.Copy(summerStrut, summerStrutCopy, 8); // copy the elements into copy 
+		foreach (string str in summerStrutCopy) Console.Write(str + " \n"); // print array 
+		Array.Reverse(summerStrutCopy); // reverse the elements in the array 
+		Console.WriteLine($"{summerStrutCopy[0]} {summerStrutCopy[7]}");// printing 1st and last element 
+		Array.Clear(ratings,0,ratings.Length); // clear array / set all elements to the same value 
+		foreach (int i in ratings) Console.Write(i + " ");
+		
+		/* While loop */
+		int emails = 20;  
+		while (emails>0){
+			emails--; Console.WriteLine($"Inbox: {emails}");
+		}
+		Console.WriteLine("INBOX ZERO ACHIEVED!");
+		
+		/* Do while loop */
+		bool buttonClick = true;
+		do {
+			Console.WriteLine("BLARRRRRRRRR");
+		} while (!buttonClick);
+		Console.WriteLine("Time for a five minute break.");
+		
+		/* for loop */
+		for ( int i = 0; i < 17; i++ ){
+			CreateTemplate(i);
+		}
+		string[] items = { "potion", "dagger", "shield", "plant" };
+		for (int i = 0; i < items.Length; i++)	{
+		  Console.WriteLine(items[i]);
+		}
+		
+		/* for each loop (or collection loops) used for collections/sequences like arrays */
+		string[] todo = { "respond to email", "make wireframe", "program feature", "fix bugs" };
+		foreach(string loopcounter in todo){CreateTodoItem(loopcounter);}
 	} 
   }
 }
