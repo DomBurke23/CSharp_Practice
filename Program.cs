@@ -514,7 +514,7 @@ namespace HelloWorld
 		int firstHeight = Array.Find(plantHeights, height => height > 5);
 		int ratingThree = Array.IndexOf(ratings, 3);
 		Console.WriteLine($"Song number {summerStrut[ratingThree+1]} is rated three stars");
-		string longName = Array.Find(summerStrut, name => name.Length > 10);
+		string longName = Array.Find(summerStrut, longname => longname.Length > 10);
 		Console.WriteLine($"he first song that has more than 10 characters in the title is {longName}");
 		Array.Sort(summerStrut);
 		Console.WriteLine(summerStrut[0] + summerStrut[7]);
@@ -554,7 +554,18 @@ namespace HelloWorld
 		
 		/* for each loop (or collection loops) used for collections/sequences like arrays */
 		string[] todo = { "respond to email", "make wireframe", "program feature", "fix bugs" };
-		foreach(string loopcounter in todo){CreateTodoItem(loopcounter);}
+		foreach(string counter in todo){CreateTodoItem(counter);}
+		
+		/* do while loop */
+		buttonClick = false;
+		int loopcounter=0; 
+			do	{
+			Console.WriteLine("BLARRRRR");
+			loopcounter++; 
+			if (loopcounter==3){break;}
+		} //while(!buttonClick&&(loopcounter<3));
+		   while(!buttonClick);
+		   
 	} 
   }
 }
