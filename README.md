@@ -35,3 +35,5 @@ foreach loops are the best way to loop over an array, or any other collection.
 At any point within a loop block, you can end it by using the break keyword.
 The continue keyword is used to bypass portions of code. It will ignore whatever comes after it in the loop and then will go back to the top and start the loop again.
 The return keyword is another way to exit a loop, specifically loops that are used within a method. When a return is used within such a loop, it breaks out of the loop and returns control to the point in the program where the method was called.
+
+In C#, a custom data type is defined with a class, and each instance of this type is an object. 
