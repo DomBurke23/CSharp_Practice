@@ -86,6 +86,13 @@ namespace BasicClasses
       return Trees; 
     }
     
+	private static int forestsCreated;
+	public static int ForestsCreated
+	{ 
+	    get{return forestsCreated; }
+	    private set {forestsCreated=value;}  
+	}
+	
     /* Constructors - look like a method but have no return type and name is the same as the class name */
     public int Radius; 
     public Forest(int radius,string name, string biome)
@@ -97,6 +104,7 @@ namespace BasicClasses
         this.Name = name;
         this.Biome = biome; 
         this.Age = 0; 
+		ForestsCreated++;
     }
     
     /* Overloading Constructors */
@@ -109,6 +117,30 @@ namespace BasicClasses
     public Forest(int radius):this(radius,"Unknown2","Unknown3")
     {
         Console.WriteLine("Country property not specified. Value defaulted to 'Unknown'.");
+    }
+	
+	/* static means “associated with the class, not an instance”. Thus any 
+	 * static member is accessed from the class, not an instance */
+	private static string definition;
+	public static string Definition
+	{ 
+    	get { return definition; }
+    	set { definition = value; }
+	}
+	
+	private static string treeFacts;
+    public static string TreeFacts{
+      get;
+      //set; 
+    }
+    public static void PrintTreeFacts(){
+      Console.WriteLine($"TreeFacts = {TreeFacts} ");
+    }
+
+    /* Static constructor */
+    static Forest(){
+      treeFacts = "Forests provide a diversity of ecosystem services including:\r\n  aiding in regulating climate.\r\n  purifying water.\r\n  mitigating natural hazards such as floods.\n";
+      ForestsCreated = 0;
     }
   }
 }
