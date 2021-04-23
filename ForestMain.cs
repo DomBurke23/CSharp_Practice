@@ -47,6 +47,12 @@ namespace BasicClasses
         Console.WriteLine("Grow() = " + f.Grow());
         Console.WriteLine("Burn() = " + f.Burn());
         Forest f3 = new Forest(1000);
+        Forest.PrintTreeFacts();
+
+		Console.WriteLine(Forest.ForestsCreated);
+		Forest f4 = new Forest(350,"Name1a","Biome1a");
+		Forest f5 = new Forest(800);
+		Console.WriteLine(Forest.ForestsCreated);
     }
   }
 }
