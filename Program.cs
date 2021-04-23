@@ -565,7 +565,17 @@ namespace HelloWorld
 			if (loopcounter==3){break;}
 		} //while(!buttonClick&&(loopcounter<3));
 		   while(!buttonClick);
-		   
+		
+		/* A static class cannot be instantiated, so you only want to do this if you are making 
+		 * a utility or library, like Math or Console.*/
+		Console.WriteLine(Math.PI);
+		Console.WriteLine(Math.Abs(-32));
+		
+		/* if you run on the command line dotnet run arg1 arg2 arg3 we will use these arguments the same as parameters */
+		if (args.Length > 0)	{
+			string mainPhrase = String.Join(" and ", args);
+			Console.WriteLine($"My favorite fruits are {mainPhrase}!");
+		}
 	} 
   }
 }
