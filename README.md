@@ -37,3 +37,6 @@ The continue keyword is used to bypass portions of code. It will ignore whatever
 The return keyword is another way to exit a loop, specifically loops that are used within a method. When a return is used within such a loop, it breaks out of the loop and returns control to the point in the program where the method was called.
 
 In C#, a custom data type is defined with a class, and each instance of this type is an object. 
+A custom data type is defined by a class.
+An instance of a class is called an object. Multiple, unique objects can be instantiated from one class.
+This process of bundling related data and methods into a type is called encapsulation, and it makes code easier to organize and reuse.
