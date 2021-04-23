@@ -40,3 +40,5 @@ In C#, a custom data type is defined with a class, and each instance of this typ
 A custom data type is defined by a class.
 An instance of a class is called an object. Multiple, unique objects can be instantiated from one class.
 This process of bundling related data and methods into a type is called encapsulation, and it makes code easier to organize and reuse.
+
+An instance constructor is run before an instance is used, and a static constructor is run once before a class is used. 
