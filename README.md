@@ -4,8 +4,8 @@ Program.cs
   1st file showing off basic C# skills. 
 Forest.cs and ForestMain.cs 
   Demonstrates classes and objects. 
-InterfaceProgram.cs , IAutomobile.cs , Sedan.cs and Truck.cs
-  Demonstrates interfaces. 
+InterfaceProgram.cs , IAutomobile.cs , Sedan.cs, Truck.cs and Vehicle.cs
+  Demonstrates interfaces. Sedan and Truck are classes with different types but with some same properties and methods. Inheritance has been used to reduce duplicates and create a superclass as shown in Vehicle.cs .  
 
 implicit conversion: happens automatically if no data will be lost in the conversion. That’s why it’s possible to convert an int (which can hold less data) to a double (which can hold more), but not the other way around.
 explicit conversion: requires a cast operator to convert a data type into another one. So if we do want to convert a double to an int, we could use the operator (int).
@@ -49,3 +49,6 @@ An instance of a class is called an object. Multiple, unique objects can be inst
 This process of bundling related data and methods into a type is called encapsulation, and it makes code easier to organize and reuse.
 
 An instance constructor is run before an instance is used, and a static constructor is run once before a class is used. 
+
+A protected member can be accessed by the current class and any class that inherits from it. 
+We can refer to a superclass inside a subclass with the base keyword. 
