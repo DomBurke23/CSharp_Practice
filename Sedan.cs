@@ -2,8 +2,9 @@ using System;
 
 namespace LearnInterfaces
 {
-  class Sedan : IAutomobile
+  class Sedan : Vehicle, IAutomobile
   {
+	/* moved to Vehicle.cs 
   	public string LicensePlate
     { get; }
 
@@ -12,13 +13,6 @@ namespace LearnInterfaces
 
     public int Wheels
     { get; }
-    
-    public Sedan(double speed) // constructor 
-    {
-      Speed = speed;
-      LicensePlate = Tools.GenerateLicensePlate(); // utility class 
-      Wheels = 4;
-    }
     
     public void Honk()
     {
@@ -34,6 +28,15 @@ namespace LearnInterfaces
     {
       Speed -= 5;
     }
-    
+    */
+	
+	public Sedan(double speed) : base(speed) // calling superclass constructor 
+    {
+		/* replaced with :base(speed) in constructor 
+		Speed = speed;
+		LicensePlate = Tools.GenerateLicensePlate(); // utility class 
+		*/
+		Wheels = 4;
+    }
   }
 }
