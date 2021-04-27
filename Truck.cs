@@ -2,8 +2,9 @@ using System;
 
 namespace LearnInterfaces
 {
-  class Truck : IAutomobile
+  class Truck : Vehicle, IAutomobile
   {
+	/* code located in Vehicle.cs 
   	public string LicensePlate
     { get; }
 
@@ -18,21 +19,6 @@ namespace LearnInterfaces
       Console.WriteLine("HONK!");
     }
 
-    public double Weight
-    {get;}
-
-    public Truck(double speed, double weight) // constructor 
-    {
-		Speed = speed;
-		Weight = weight; 
-		LicensePlate = Tools.GenerateLicensePlate(); // utility class 
-		if (Weight < 400 ) {
-			Wheels = 8; 
-		} else { 
-			Wheels = 12; 
-		}
-    }
-	
 	public void SpeedUp()
 	{
 		Speed += 5;
@@ -42,5 +28,24 @@ namespace LearnInterfaces
 	{
 		Speed -= 5;
 	}
+	*/
+	
+    public double Weight
+    {get;}
+	
+    public Truck(double speed, double weight) : base(speed) // constructor 
+    {
+		/* replaced with :base(speed)
+		Speed = speed;
+		LicensePlate = Tools.GenerateLicensePlate(); // utility class 
+		*/
+		Weight = weight; 
+		if (Weight < 400 ) {
+			Wheels = 8; 
+		} else { 
+			Wheels = 12; 
+		}
+    }
+
   }
 }
