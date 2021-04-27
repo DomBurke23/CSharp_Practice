@@ -2,14 +2,15 @@ using System;
 
 namespace LearnInheritance
 {
-	class Vehicle // superclass defined like a normal class 
+	abstract class Vehicle // superclass defined like a normal class 
 	{
 	
 		public string LicensePlate
 		{ get; private set; }
 
 		public double Speed
-		{ get; private set; }
+		//{ get; private set; }
+		{ get; protected set; }
 
 		public int Wheels
 		{ get; protected set; }
@@ -19,12 +20,14 @@ namespace LearnInheritance
 		  Console.WriteLine("HONK!");
 		}
 		
-		public void SpeedUp()
+		//public void SpeedUp()
+		public virtual void SpeedUp() // can be overridden 
 		{
 		  Speed += 5;
 		}
 
-		public void SlowDown()
+		//public void SlowDown()
+		public virtual void SlowDown() // can be overridden 
 		{
 		  Speed -= 5;
 		}
@@ -34,6 +37,8 @@ namespace LearnInheritance
 		  Speed = speed;
 		  LicensePlate = Tools.GenerateLicensePlate();
 		} 
+		
+		public abstract string Describe(); // subclasses must define a Describe() method 
   }
 }
 
