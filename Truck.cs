@@ -47,5 +47,9 @@ namespace LearnInterfaces
 		}
     }
 
+    public override string Describe()
+	{
+	  return $"This Truck is moving on {Wheels} wheels at {Speed} km/h, with license plate {LicensePlate}.";
+	}
   }
 }
