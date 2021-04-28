@@ -56,3 +56,7 @@ A protected member can be accessed by the current class and any class that inher
 We can refer to a superclass inside a subclass with the base keyword. 
 
 reference-type variables refer to a place in memory, value-type variables hold the actual data. 
+
+Upcasting is creating a superclass or interface reference from a subclass reference
+Downcasting is creating a subclass reference from a superclass or interface reference.
+Upcasting can be done implicitly, while downcasting cannot
