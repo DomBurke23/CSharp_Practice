@@ -54,3 +54,5 @@ An instance constructor is run before an instance is used, and a static construc
 
 A protected member can be accessed by the current class and any class that inherits from it. 
 We can refer to a superclass inside a subclass with the base keyword. 
+
+reference-type variables refer to a place in memory, value-type variables hold the actual data. 
