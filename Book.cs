@@ -10,13 +10,18 @@ namespace LearnReferences
 
     public Book(string author = "Unknown", string title = "Untitled")
     {
-      Author = author;
-      Title = title;
+		Author = author;
+		Title = title;
     }
 
     public virtual string Stringify()
     {
-      return "This is a Book object!";
+		return "This is a Book object!";
     }
+	
+	public override string ToString()
+	{
+		return $"This Author is {Author}, and the title is {Title}."; 
+	}
   }
 }
