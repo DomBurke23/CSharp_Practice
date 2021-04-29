@@ -70,8 +70,10 @@ namespace LearnReferences
 		Book bdiss = new Dissertation();
 		Console.WriteLine(bk.Stringify());
 		Console.WriteLine(bdiss.Stringify());
-		Book b1 = new Book();
-		Book b2 = new Diary();
+		//Book b1 = new Book();
+		b1 = new Book();
+		//Book b2 = new Diary();
+		b2 = new Diary();
 		Console.WriteLine(b1.Stringify());
 		Console.WriteLine(b2.Stringify());
 		
@@ -86,6 +88,42 @@ namespace LearnReferences
 		Diary[] diaries = new Diary[5]; // diaries[1] is unassigned, diaries[2] is unassigned, etc.
 		Console.WriteLine(dy); // nothing is printed 
 		Console.WriteLine(dy == null); // Output = true 
+		
+		/* convert reference to an object */
+		Object o1 = new Dissertation();
+		Object o2 = new Diary();
+		Object o3 = new Random();
+		Object o4 = new Forest("Amazon");
+		Object o5 = 21;
+		Object o6 = false;
+		Object o7 = "Hello you!";
+		//Book bk = new Book(); // reference
+		Object o8 = bk; // Object reference
+		Diary dy3 = new Diary(38);
+		Object o9 = dy;     
+		int i = 9;
+		Object o10 = i; 
+		
+		/* Object Members */
+		Object ob = new Object();
+		Type t = o1.GetType(); // t is System.Object
+		string s = o1.ToString();
+		o2 = o1;
+		bool b11 = o1.Equals(o2); // Equals true
+		Console.WriteLine($"o1 = {o1},\nt = {t},\ns = {s},\no2 = {o2},\nb = {b1}"); // all but b print system.object 
+		Book b4 = new Book();      
+		Diary d = new Diary(38);
+		Random r = new Random();
+		i = 9;
+		Object[] array = {b4,d,r,i};
+		foreach (Object counter in array)
+		{ Console.WriteLine(counter.GetType());}
+		
+		/* Overriding Object Members */
+		Diary dy5 = new Diary(7);
+		Console.WriteLine(dy5.ToString());
+		Book bk = new Book("Ta-Nehisi Coates", "Between the World and Me");
+		Console.WriteLine(bk.ToString());
     }
   }
 }
