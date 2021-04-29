@@ -464,7 +464,7 @@ namespace HelloWorld
 		string[] spaceRocks = {"meteoroid", "meteor", "meteorite"};
 		//bool makesContact = Array.Exists(spaceRocks, HitGround);
 		/* rewrite the line above as a lambda expression */ 
-		bool makesContact = Array.Exists(spaceRocks,(string s) => s == "meteorite" );
+		bool makesContact = Array.Exists(spaceRocks,(string spacerock) => spacerock == "meteorite" );
 		if (makesContact)	{
 			Console.WriteLine("At least one space rock has reached the Earth's surface!");
 		} 
@@ -576,6 +576,27 @@ namespace HelloWorld
 			string mainPhrase = String.Join(" and ", args);
 			Console.WriteLine($"My favorite fruits are {mainPhrase}!");
 		}
+		
+		string s;  // Unassigned
+		string s2 = null; // Null
+		string s3 = ""; // Empty string
+		string s4 = String.Empty; // Also empty string
+		Console.WriteLine(s3 == s4); // This prints true
+		Console.WriteLine("Please enter");
+		string userinput = Console.ReadLine();
+		if( userinput == String.IsNullOrEmpty() ){
+			Console.WriteLine("You didn't enter anything!");
+		}else{
+			Console.WriteLine("Thank you for your submission!");
+		}
+		string lyrics = 
+		"Dollie, Dollie, bo-bollie,\n" +
+		"Banana-fana fo-follie\n" +
+		"Fee-fi-mo-mollie\n" +
+		"Dollie!";
+		// Call `Replace()` here
+		lyrics = lyrics.Replace("ollie", "ana");
+		Console.WriteLine(lyrics);
 	} 
   }
 }
