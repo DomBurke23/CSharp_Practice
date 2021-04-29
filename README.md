@@ -1,27 +1,33 @@
 # CSharp_Practice
 
 Program.cs 
+
   1st file showing off basic C# skills. 
   
 Forest.cs and ForestMain.cs 
+
   Demonstrates classes and objects. 
   
 InterfaceProgram.cs , IAutomobile.cs , Sedan.cs, Truck.cs, Bicycle.cs and Vehicle.cs
+
   Demonstrates interfaces. Sedan and Truck are classes with different types but with some same properties and methods. Inheritance has been used to reduce duplicates and create a superclass as shown in Vehicle.cs .  
   
 ReferencesMain. cs, IFlippable.cs, Book.cs , Dissertation.cs and Diary.cs
+
   Demonstrating references in c#. 
 
 implicit conversion: happens automatically if no data will be lost in the conversion. That’s why it’s possible to convert an int (which can hold less data) to a double (which can hold more), but not the other way around.
 explicit conversion: requires a cast operator to convert a data type into another one. So if we do want to convert a double to an int, we could use the operator (int).
 
 There are several built-in methods that we can use to manipulate numerical data and perform more complex mathematical calculations. Here are a few:
+
 - Math.Abs()—will find the absolute value of a number. Example: Math.Abs(-5) returns 5.
 - Math.Sqrt()—will find the square root of a number. Example: Math.Sqrt(16) returns 4.
 - Math.Floor()—will round the given double or decimal down to the nearest whole number. Example: Math.Floor(8.65) returns 8.
 - Math.Min()—returns the smaller of two numbers. Example: Math.Min(39, 12) returns 12.
 
 .Substring() grabs part of a string using the specified character position and continues until the end of the string and returns a new string. 
+
 .IndexOf() is usually used first to get the specific character position.
 
 methods - A method is a reusable set of instructions that perform a specific task.
@@ -29,15 +35,23 @@ methods - A method is a reusable set of instructions that perform a specific tas
 method overloading -  is useful if you want the same method to have different behavior based on its inputs.
 
 expression-bodied definitions and lambda expressions. “These are shortcuts for defining methods!” 
+
 expression-bodied definitions can only be used when a method contains one expression. 
+
 lambda expressions, are great for situations when you need to pass a method as an argument.
 
 Data structures are formats designed to store larger amounts of information in an organized fashion. An array is one very basic data structure. 
+
 Array.Sort() - sorts the array. If it is an array of integer values, it will sort them into ascending values (lowest to highest). If it’s an array of string values, they would be sorted alphabetically.
+
 Array.IndexOf() - takes a value and returns its index. IndexOf() works best when you have a specific value and need to know where it’s located in the array (or if it even exists!). IndexOf() typically takes two parameters: the first is the array and the second is the value whose index we’re locating. IndexOf() also has several overloads that allow you to search for a specific range of the array. If the value appears more than once in an array, it returns only the first occurrence within the specified range. If it cannot find the value, it returns the lower bound of the array, minus 1 (since most arrays start at 0, it’s usually -1).
+
 Array.Find() - searches a one-dimensional array for a specific value or set of values that match a certain condition and returns the first occurrence in the array. Find() takes two parameters: the first is the array and the second is a predicate that defines what we’re looking for. A predicate is a method that takes one input and outputs a boolean. Unlike IndexOf(), Find() returns the actual values that match the condition, instead of their index. It’s customary to use a lambda function for the predicate to determine if the value meets the necessary criteria. 
+
 Array.Copy() copies a range of elements from one array to a second array. It takes three parameters: the name of the array to be copied, the new array, and the length of the array elements.
+
 Array.Reverse() will switch the order of elements in an entire array. It can also reverse them in a portion of an array.
+
 Array.Clear() sets a range of elements in an array to the default value. It takes three parameters: the name of the array, the starting index of the range to clear, and the number of elements to clear. To clear an entire array, set the index to 0 (if it is zero-indexed) and then pass in the length of the array for the third parameter.
 
 while loops are good when you know your stopping condition, but not when you know how many times you want a program to loop or if you have a specific collection to loop through.
@@ -61,12 +75,17 @@ We can refer to a superclass inside a subclass with the base keyword.
 reference-type variables refer to a place in memory, value-type variables hold the actual data. 
 
 Upcasting is creating a superclass or interface reference from a subclass reference
+
 Downcasting is creating a subclass reference from a superclass or interface reference.
+
 Upcasting can be done implicitly, while downcasting cannot
 
 Here are four common range-related methods:
 
 AddRange() — takes an array or list as an argument. Adds the values to the end of the list. Returns nothing.
+
 InsertRange() — takes an int and array or list as an argument. Adds the values at the int index. Returns nothing.
+
 RemoveRange() — takes two int values. The first int is the index at which to begin removing and the second int is the number of elements to remove. Returns nothing.
+
 GetRange() — takes two int values. The first int is the index of the first desired element and the second int is the number of elements in the desired range. Returns a list of the same type.
